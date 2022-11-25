@@ -37,6 +37,10 @@ public class Bean1 {
         this.javaHome = javaHome;
     }
 
+    public String getJavaHome(){
+        return this.javaHome;
+    }
+
     @PostConstruct
     public void init(){
         log.debug("@PostConstruct 生效");
