@@ -40,6 +40,9 @@ public class A05Application {
         //模拟@Bean
         context.registerBean(AtBeanPostProcess.class);
 
+        //模拟@mapper
+        context.registerBean(MapperPostProcessor.class);
+
 
 
         context.refresh();
