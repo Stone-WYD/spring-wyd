@@ -3,6 +3,7 @@ idea快捷键：
     2.ctrl + f12 -> 查看某个类的方法
     3.在类结构图中，点击f4可跳转到对应类
     4.ctrl + alt + t ->增加包围内容
+    5.ctrl + shift + f9 -> 编译当前文件
 
 github慢：
     绕过DNS，访问https://www.ipaddress.com/获取github相关资源的ip地址。

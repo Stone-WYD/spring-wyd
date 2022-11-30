@@ -55,6 +55,12 @@
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
 
+        <!-- 切面 -->
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+        </dependency>
+
     </dependencies>
 
     <build>
