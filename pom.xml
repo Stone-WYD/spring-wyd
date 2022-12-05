@@ -61,6 +61,12 @@
             <artifactId>aspectjweaver</artifactId>
         </dependency>
 
+        <!-- 请求测试 -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+        </dependency>
+
     </dependencies>
 
     <build>
