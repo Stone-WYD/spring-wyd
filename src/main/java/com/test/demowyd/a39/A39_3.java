@@ -2,9 +2,7 @@ package com.test.demowyd.a39;
 
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
-import org.springframework.boot.DefaultApplicationArguments;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.WebApplicationType;
+import org.springframework.boot.*;
 import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
 import org.springframework.boot.web.reactive.context.AnnotationConfigReactiveWebServerApplicationContext;
 import org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext;
@@ -14,10 +12,12 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.*;
 import org.springframework.context.support.GenericApplicationContext;
 
+import java.util.Arrays;
+
 public class A39_3 {
 
     @SuppressWarnings("all")
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         SpringApplication app = new SpringApplication();
         app.addInitializers(new ApplicationContextInitializer<ConfigurableApplicationContext>() {
             @Override
@@ -54,6 +54,17 @@ public class A39_3 {
             System.out.println("bean name:" + name + ", 来源：" + context.getDefaultListableBeanFactory().getBeanDefinition(name).getResourceDescription() );
         }
 
+        System.out.println(">>>>>>>>>>>>>>>>>>>>>>>> 12. 执行 runner");
+        for (CommandLineRunner runner : context.getBeansOfType(CommandLineRunner.class).values()) {
+            runner.run(args);
+        }
+
+        for (ApplicationRunner runner : context.getBeansOfType(ApplicationRunner.class).values()) {
+            runner.run(arguments);
+
+        }
+
+        context.close();
     }
 
     private static GenericApplicationContext createApplicationContext(WebApplicationType type){
@@ -87,6 +98,24 @@ public class A39_3 {
         @Bean
         public ServletWebServerFactory servletWebServerFactory(){
             return new TomcatServletWebServerFactory();
+        }
+
+        @Bean
+        public CommandLineRunner commandLineRunner(){
+            return args -> System.out.println("commandLineRunner()..." + Arrays.toString(args));
+        }
+
+        @Bean
+        public ApplicationRunner applicationRunner(){
+            return new ApplicationRunner() {
+                @Override
+                public void run(ApplicationArguments args) throws Exception {
+                    System.out.println("applicationRunner()..." + Arrays.toString(args.getSourceArgs()));
+                    System.out.println(args.getOptionNames());
+                    System.out.println(args.getOptionValues("server.port"));
+                    System.out.println(args.getNonOptionArgs());
+                }
+            };
         }
     }
 }
