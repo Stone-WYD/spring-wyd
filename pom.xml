@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.test</groupId>
-    <artifactId>demomyd</artifactId>
+    <artifactId>spring-wyd</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>demomyd</name>
-    <description>demomyd</description>
+    <name>spring-wyd</name>
+    <description>spring-wyd</description>
     <properties>
         <java.version>17</java.version>
     </properties>
