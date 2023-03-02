@@ -2,7 +2,9 @@ package org.springframework.aop.framework.autoproxy;
 
 import org.aopalliance.intercept.MethodInterceptor;
 import org.aopalliance.intercept.MethodInvocation;
+import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.springframework.aop.Advisor;
@@ -84,6 +86,13 @@ public class A17 {
         @After("execution(* foo())")
         public void after(){
             System.out.println("aspect1 after...");
+        }
+
+        @Around("execution(* foo())")
+        public void around(ProceedingJoinPoint joinPoint) throws Throwable {
+            System.out.println("aspect1 around start...");
+            joinPoint.proceed();
+            System.out.println("aspect1 around end...");
         }
     }
 
