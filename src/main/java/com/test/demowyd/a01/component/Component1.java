@@ -1,7 +1,16 @@
 package com.test.demowyd.a01.component;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+import javax.annotation.Resource;
+
+@Service
 public class Component1 {
+
+    @Resource
+    private Component2 component2;
+
+    public void test1(){
+
+    }
 }
