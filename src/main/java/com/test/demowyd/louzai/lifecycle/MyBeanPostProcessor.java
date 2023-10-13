@@ -1,4 +1,4 @@
-package com.test.demowyd.louzai;
+package com.test.demowyd.louzai.lifecycle;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
