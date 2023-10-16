@@ -1,4 +1,4 @@
-package com.test.demowyd.louzai;
+package com.test.demowyd.louzai.lifecycle;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
