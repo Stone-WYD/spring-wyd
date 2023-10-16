@@ -1,0 +1,7 @@
+spring:
+  datasource:
+    url: jdbc:mysql://192.168.20.28:3306/interface_platform?characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8&allowPublicKeyRetrieval=true&autoReconnect=true&failOverReadOnly=false&maxReconnects=10&allowMultiQueries=true
+    username: ssfw
+    password: njxnet1234
+    driverClassName: com.mysql.cj.jdbc.Driver
+    name: mydb

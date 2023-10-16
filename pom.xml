@@ -88,6 +88,11 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>
+                        com.test.demowyd.wyd.construct.DemomydApplication
+                    </mainClass>
+                </configuration>
                 <!--<configuration>
                     <excludes>
                         <exclude>
@@ -97,6 +102,32 @@
                     </excludes>
                 </configuration>-->
             </plugin>
+
+            <!-- 上面的 plugin 是jar包打印指定文件时使用的
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>
+                        com.test.demowyd.wyd.construct.DemomydApplication
+                    </mainClass>
+                    <directories>
+                        <directory>
+                            com.test.demowyd.wyd.construct
+                        </directory>
+                    </directories>
+                </configuration>
+                &lt;!&ndash;<configuration>
+                    <excludes>
+                        <exclude>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </exclude>
+                    </excludes>
+                </configuration>&ndash;&gt;
+            </plugin>
+            -->
+
         </plugins>
     </build>
 
