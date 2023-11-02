@@ -1,4 +1,4 @@
-package com.test.demowyd.wyd01;
+package com.test.demowyd.wyd.web;
 
 
 import org.slf4j.Logger;

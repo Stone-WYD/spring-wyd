@@ -1,4 +1,4 @@
-package com.test.demowyd.wyd01;
+package com.test.demowyd.wyd.web;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.method.HandlerMethod;

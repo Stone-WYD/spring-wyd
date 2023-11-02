@@ -1,4 +1,4 @@
-package com.test.demowyd.wyd01;
+package com.test.demowyd.wyd.web;
 
 import org.springframework.boot.autoconfigure.web.ServerProperties;
 import org.springframework.boot.autoconfigure.web.servlet.DispatcherServletRegistrationBean;
