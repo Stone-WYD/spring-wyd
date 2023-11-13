@@ -10,7 +10,6 @@ public class AopTestApplication {
 
     public static void main(String[] args) {
         ConfigurableApplicationContext applicationContext = SpringApplication.run(AopTestApplication.class, args);
-
         Louzai louzai = applicationContext.getBean(Louzai.class);
         louzai.everyDay();
     }
